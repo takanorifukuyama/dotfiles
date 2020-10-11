@@ -7,6 +7,7 @@
 	default = current
 [core]
     paper = delta
+	editor = nvim
 [interactive]
     diffFilter = delta --color-only
 
@@ -15,6 +16,7 @@
     syntax-theme = Dracula
     plus-style = syntax "#003800"
     minus-style = syntax "#3f0001"
+	side-by-side = true
 
 [delta "decorations"]
     commit-decoration-style = bold yellow box ul
@@ -27,3 +29,5 @@
     line-numbers-right-style = cyan
     line-numbers-minus-style = 124
     line-numbers-plus-style = 28
+[pull]
+	rebase = false
