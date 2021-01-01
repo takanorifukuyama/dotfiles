@@ -2,7 +2,7 @@
 	email = takanori.fukuyama@gmail.com
 	name = Takanori Fukuyama
 [ghq]
-	root = /Users/takanorifukuyama/git
+	root = /Users/takanorifukuyama/Sources
 [push]
 	default = current
 [core]
