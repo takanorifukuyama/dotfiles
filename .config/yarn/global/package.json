@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "gatsby-cli": "^2.16.2",
     "neovim": "^4.9.0"
   }
 }
