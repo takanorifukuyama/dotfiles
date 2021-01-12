@@ -1,29 +1,31 @@
 snippet tabletest
-    for _, td := range []struct {
-        title  string
-        input  []int
-        output int
-    }{
-        {
-            title:  "2×3の答えが6になる",
-            input:  []int{2, 3},
-            output: 6,
-        },
-        {
-            title:  "3×5の答えが15になる",
-            input:  []int{3, 5},
-            output: 15,
-        },
-    } {
-        t.Run("Square:"+td.title, func(t *testing.T) {
-            result := Square(td.input[0], td.input[1])
-            if td.output == result {
-                t.Errorf("expect: %s, result: %s", td.output, result)
-            }
-        })
+    func Test${1}(t *testing.T) {    
+        for _, td := range []struct {
+            title  string
+            input  []int
+            output int
+        }{
+            {
+                title:  "2×3の答えが6になる",
+                input:  []int{2, 3},
+                output: 6,
+            },
+            {
+                title:  "3×5の答えが15になる",
+                input:  []int{3, 5},
+                output: 15,
+            },
+        } {
+            t.Run("$1:"+td.title, func(t *testing.T) {
+                actual := $1(td.input[0], td.input[1])
+                if td.output == actual {
+                    t.Errorf("expect: %s, result: %s", td.output, actual)
+                }
+            })
+        }
     }
 
-snippet errif
-    if err != nil {
-        return err
+snippet errifshort
+    if err := ${1}; err != nil {
+        ${2}
     }
