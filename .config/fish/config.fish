@@ -1,5 +1,6 @@
 alias v "nvim"
 alias fc "nvim ~/.config/fish/config.fish"
+alias nc "nvim ~/.config/nvim"
 alias g "git"
 alias feature "git flow feature"
 alias ga "git add"
