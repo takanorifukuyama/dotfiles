@@ -11,6 +11,7 @@ let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls'],
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ 'css': ['css-languageserver', '--stdio'],
+    \ 'scss': ['css-languageserver', '--stdio'],
     \ 'sass': ['css-languageserver', '--stdio'],
     \ 'less': ['css-languageserver', '--stdio'],
     \ 'javascript': ['javascript-typescript-stdio'],
@@ -20,7 +21,7 @@ let g:LanguageClient_serverCommands = {
     \ 'typescriptreact': ['typescript-language-server', '--stdio'],
     \ 'vue': ['vls'],
     \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
-    \ 'dart': ['dart' ,'$DART_SDK/snapshots/analysis_server.dart.snapshot'],
+    \ 'dart': ['dart' ,'$DART_SDK/snapshots/analysis_server.dart.snapshot', '--lsp'],
     \ 'go': ['gopls'],
     \ 'terraform': ['terraform-lsp']
     \ }
