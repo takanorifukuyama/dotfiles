@@ -2,7 +2,7 @@
 	email = takanori.fukuyama@gmail.com
 	name = Takanori Fukuyama
 [ghq]
-	root = /Users/takanorifukuyama/Sources
+	root = /Users/takanorifukuyama/git
 [push]
 	default = current
 [core]
@@ -33,3 +33,5 @@
 	  rebase = false
 [init]
 	  defaultBranch = main
+[alias]
+    graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short

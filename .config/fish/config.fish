@@ -6,7 +6,7 @@ alias feature "git flow feature"
 alias ga "git add"
 alias gps "git push"
 alias gst "git status"
-alias gc "git commit -am"
+alias gc "git commit"
 alias gcm "git commit -m"
 alias gdd "git diff | delta --dark"
 alias gb "git branch"
@@ -17,6 +17,7 @@ alias ctl "kubectl"
 alias ctx "kubectx"
 alias ns "kubens"
 alias val "kubeval"
+alias code "code-insiders"
 
 # rust
 set -x PATH ~/.cargo/bin $PATH
@@ -40,7 +41,7 @@ set -x PATH ~/.nodebrew/current/bin $PATH
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish ; or true
 
-# starship init fish | source
+starship init fish | source
 # pyenv init - | source
 # pyenv virtualenv-init - | source
 

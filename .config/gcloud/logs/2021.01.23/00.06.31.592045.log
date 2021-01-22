@@ -1,0 +1,19 @@
+2021-01-23 00:06:31,596 DEBUG    root            Loaded Command Group: ['gcloud', 'components']
+2021-01-23 00:06:31,597 DEBUG    root            Loaded Command Group: ['gcloud', 'components', 'update']
+2021-01-23 00:06:31,598 DEBUG    root            Running [gcloud.components.update] with arguments: [--allow-no-backup: "True", --quiet: "True", COMPONENT-IDS:6: "['core', 'gcloud-deps', 'bq', 'gcloud', 'gsutil', 'anthoscli']"]
+2021-01-23 00:06:31,599 INFO     ___FILE_ONLY___ Beginning update. This process may take several minutes.
+
+2021-01-23 00:06:32,182 DEBUG    root            (gcloud.components.update) The following components are unknown [anthoscli].
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 982, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 809, in Run
+    resources = command_instance.Run(args)
+  File "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/lib/surface/components/update.py", line 114, in Run
+    update_manager.Update(
+  File "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 906, in Update
+    update_seed = self._HandleInvalidUpdateSeeds(diff, version, update_seed)
+  File "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 1098, in _HandleInvalidUpdateSeeds
+    raise InvalidComponentError(' '.join(msgs))
+googlecloudsdk.core.updater.update_manager.InvalidComponentError: The following components are unknown [anthoscli].
+2021-01-23 00:06:32,183 ERROR    root            (gcloud.components.update) The following components are unknown [anthoscli].

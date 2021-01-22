@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "eslint": "^7.17.0",
+    "fast-cli": "^2.4.0",
     "gatsby-cli": "^2.16.2",
     "neovim": "^4.9.0",
     "prettier-eslint-cli": "^5.0.0",
