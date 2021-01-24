@@ -1,6 +1,6 @@
 alias v "nvim"
-alias fc "nvim ~/.config/fish/config.fish"
-alias nc "nvim ~/.config/nvim"
+alias fc "nvim $HOME/.config/fish/config.fish"
+alias nc "nvim $HOE/.config/nvim"
 alias g "git"
 alias feature "git flow feature"
 alias ga "git add"
@@ -57,10 +57,6 @@ set -x GOPATH ~/go
 set -x GO111MODULE on
 set -x PATH $GOBIN $PATH
 
-# apple silicon setting
-set -x PATH /opt/homebrew/bin $PATH
-set -x PATH ~/nvim-osx64/bin $PATH
-
 # Wasmer
-export WASMER_DIR="/Users/takanorifukuyama/.wasmer"
+set -x WASMER_DIR ~/.wasmer
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
