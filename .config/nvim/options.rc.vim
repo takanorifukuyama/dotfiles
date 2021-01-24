@@ -33,7 +33,7 @@ set nomodeline
 
 " Use clipboard register.
 
-let g:python_host_prog = "/usr/bin/python"
+let g:python_host_prog = "/usr/local/bin/python"
 let g:python3_host_prog = "/usr/bin/python3"
 
 " if (!has('nvim') || $DISPLAY != '') && has('clipboard')
