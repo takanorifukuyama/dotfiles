@@ -1,5 +1,5 @@
 snippet tabletest
-    func Test${1}(t *testing.T) {    
+    func Test${1}(t *testing.T) {
         for _, td := range []struct {
             title  string
             input  []int
@@ -18,8 +18,8 @@ snippet tabletest
         } {
             t.Run("$1:"+td.title, func(t *testing.T) {
                 actual := $1(td.input[0], td.input[1])
-                if td.output == actual {
-                    t.Errorf("expect: %s, result: %s", td.output, actual)
+                if actual == td.output {
+                    t.Errorf("result: %v, expect: %v", actual, td.output)
                 }
             })
         }

@@ -36,12 +36,17 @@ set -x DART_SDK ~/.SDK/flutter/bin/cache/dart-sdk/bin
 set -x PATH ~/.pub-cache/bin $PATH
 set -x PATH $DART_SDK $PATH
 
+set -x PATH ~/.SDK/google-cloud-sdk/bin $PATH
+
 # nodejs
 set -x PATH ~/.nodebrew/current/bin $PATH
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish ; or true
 
 starship init fish | source
+
+# python
+set -x PATH ~/miniforge3/bin $PATH
 # pyenv init - | source
 # pyenv virtualenv-init - | source
 
@@ -60,6 +65,7 @@ set -x PATH $GOBIN $PATH
 # apple silicon setting
 set -x PATH /opt/homebrew/bin $PATH
 set -x PATH ~/nvim-osx64/bin $PATH
+
 
 # Wasmer
 export WASMER_DIR="/Users/takanorifukuyama/.wasmer"

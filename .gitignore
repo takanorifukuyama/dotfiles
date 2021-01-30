@@ -1,3 +1,4 @@
 **/node_modules/
 .config/yarn/global/node_modules
 .config/gh/hosts.yml
+.config/gcloud/
