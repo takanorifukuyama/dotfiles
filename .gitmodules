@@ -1,0 +1,3 @@
+[submodule ".SDK/flutter"]
+	path = .SDK/flutter
+	url = git@github.com:flutter/flutter.git

@@ -2,3 +2,4 @@
 .config/yarn/global/node_modules
 .config/gh/hosts.yml
 .config/gcloud/
+.SDK/google-cloud-sdk/
