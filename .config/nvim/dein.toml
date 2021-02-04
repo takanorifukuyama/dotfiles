@@ -48,6 +48,8 @@ repo = 'ayu-theme/ayu-vim'
 hook_add = '''
 set termguicolors
 let ayucolor="dark"
+autocmd ColorScheme * highlight Comment ctermfg=14 guifg=#8FA0B3
+autocmd ColorScheme * highlight LineNr ctermfg=14 guifg=#8FA0B3
 colorscheme ayu
 '''
 
