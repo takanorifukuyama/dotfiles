@@ -60,3 +60,5 @@ set -x PATH $GOBIN $PATH
 # Wasmer
 set -x WASMER_DIR ~/.wasmer
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+
+set -x PATH ~/.config/nvim/bin $PATH
