@@ -1,5 +1,6 @@
 #!/bin/sh
-sudo apt -y install fish
+sudo apt -y install fish peco fzf
+go get github.com/x-motemen/ghq
 pip install pynvim neovim
 pip3 install pynvim neovim
 npm install -g neovim
