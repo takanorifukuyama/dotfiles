@@ -1,0 +1,5 @@
+#!/bin/sh
+sudo apt -y install fish
+pip install pynvim neovim
+pip3 install pynvim neovim
+npm install -g neovim
