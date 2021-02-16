@@ -27,6 +27,7 @@ let g:LanguageClient_serverCommands = {
     \ 'c': ['clangd'],
     \ 'cpp': ['clangd'],
     \ 'haskell': ['haskell-language-server-wrapper', '--lsp'],
+    \ 'sql': ['sql-language-server', 'up', '--method', 'stdio'],
     \ }
 
 augroup LanguageClient_config
