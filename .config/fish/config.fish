@@ -1,4 +1,5 @@
 alias v "nvim"
+alias f "fvm flutter"
 alias fc "nvim ~/.config/fish/config.fish"
 alias nc "nvim ~/.config/nvim"
 alias g "git"
@@ -19,6 +20,9 @@ alias ctx "kubectx"
 alias ns "kubens"
 alias val "kubeval"
 alias code "code-insiders"
+alias d "docker-compose"
+
+alias bz "blitz"
 
 # rust
 set -x PATH ~/.cargo/bin $PATH
