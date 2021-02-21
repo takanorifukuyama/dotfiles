@@ -10,10 +10,11 @@ source ~/.config/nvim/plugins/deoplete.vim
 call deoplete#enable()
 '''
 
-# [[plugins]]
-# repo = 'tbodt/deoplete-tabnine' 
-# on_event = 'InsertEnter'
-# build = './install.sh'
+[[plugins]]
+repo = 'shougo/deoplete-tabnine' 
+rev = 'applem1'
+on_event = 'InsertEnter'
+build = './install.sh'
 
 [[plugins]]
 repo = 'autozimu/LanguageClient-neovim'
