@@ -2,10 +2,12 @@
   "dependencies": {
     "@aws-amplify/cli": "^4.41.2",
     "blitz": "^0.29.7",
-    "create-next-app": "^10.0.6",
+    "create-next-app": "^10.0.7",
     "eslint": "^7.19.0",
     "fast-cli": "^2.4.0",
     "gatsby-cli": "^2.16.2",
+    "js-beautify": "^1.13.5",
+    "json-server": "^0.16.3",
     "neovim": "^4.9.0",
     "prettier": "^2.2.1",
     "prettier-eslint-cli": "^5.0.0",
