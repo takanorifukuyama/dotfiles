@@ -1,3 +1,4 @@
+nnoremap <silent> ga :Git add -A<CR>
 nnoremap <silent> gs :Git<CR><C-w>T
 nnoremap <silent> gps :Git push<CR>
 nnoremap <silent> gpl :Git pull<CR>

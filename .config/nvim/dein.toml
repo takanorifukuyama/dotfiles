@@ -11,8 +11,7 @@ call deoplete#enable()
 '''
 
 [[plugins]]
-repo = 'shougo/deoplete-tabnine' 
-rev = 'applem1'
+repo = 'tbodt/deoplete-tabnine' 
 on_event = 'InsertEnter'
 build = './install.sh'
 
