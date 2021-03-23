@@ -7,6 +7,7 @@ augroup filetype_rust
     autocmd BufReadPost *.rs setlocal filetype=rust
 augroup END
 
+" Terraform >=0.12.0
 let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls'],
     \ 'rust': ['rustup', 'run', 'beta', 'rls'],
@@ -23,11 +24,11 @@ let g:LanguageClient_serverCommands = {
     \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
     \ 'dart': ['dart' ,'$DART_SDK/snapshots/analysis_server.dart.snapshot', '--lsp'],
     \ 'go': ['gopls'],
-    \ 'terraform': ['terraform-lsp'],
     \ 'c': ['clangd'],
     \ 'cpp': ['clangd'],
     \ 'haskell': ['haskell-language-server-wrapper', '--lsp'],
     \ 'sql': ['sql-language-server', 'up', '--method', 'stdio'],
+    \ 'terraform': ['terraform-ls', 'serve'], 
     \ }
 
 augroup LanguageClient_config
