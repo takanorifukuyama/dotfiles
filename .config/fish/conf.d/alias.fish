@@ -22,7 +22,6 @@ alias ctl "kubectl"
 alias ctx "kubectx"
 alias ns "kubens"
 alias val "kubeval"
-alias code "code-insiders"
 alias d "docker-compose"
 
 alias bz "blitz"
