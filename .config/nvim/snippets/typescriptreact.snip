@@ -8,3 +8,17 @@ snippet sbmeta
   } as Meta
 
   export const Default: Story = () => <$1 />
+
+
+snippet sbmetaprops
+  import { Meta, Story } from '@storybook/react/types-6-0'
+  import { ${1}, Props } from '.'
+
+  export default {
+    title: 'ui/$1',
+    component: $1
+  } as Meta
+
+  export const Default: Story<Props> = (args) => <$1 {...args} />
+  Default.args = {}
+

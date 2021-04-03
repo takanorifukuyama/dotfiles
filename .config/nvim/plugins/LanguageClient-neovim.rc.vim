@@ -7,6 +7,9 @@ augroup filetype_rust
     autocmd BufReadPost *.rs setlocal filetype=rust
 augroup END
 
+" julia
+let g:default_julia_version = '1.5.3'
+
 " Terraform >=0.12.0
 let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls'],
@@ -27,8 +30,18 @@ let g:LanguageClient_serverCommands = {
     \ 'c': ['clangd'],
     \ 'cpp': ['clangd'],
     \ 'haskell': ['haskell-language-server-wrapper', '--lsp'],
-    \ 'sql': ['sql-language-server', 'up', '--method', 'stdio'],
     \ 'terraform': ['terraform-ls', 'serve'], 
+    \ 'julia': ['julia', '--startup-file=no', '--history-file=no', '-e', '
+    \     using LanguageServer;
+    \     using Pkg;
+    \     import StaticLint;
+    \     import SymbolServer;
+    \     env_path = dirname(Pkg.Types.Context().env.project_file);
+    \
+    \     server = LanguageServer.LanguageServerInstance(stdin, stdout, env_path, "");
+    \     server.runlinter = true;
+    \     run(server);
+    \ ']
     \ }
 
 augroup LanguageClient_config
