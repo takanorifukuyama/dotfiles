@@ -65,6 +65,8 @@ nnoremap <silent> [Space]d :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> [Space]r :call LanguageClient_textDocument_rename()<CR>
 nnoremap <silent> [Space]f :call LanguageClient_textDocument_formatting()<CR>
 nnoremap <silent> [Space]t :call LanguageClient_textDocument_typeDefinition()<CR>
+" detailed error messages
+nnoremap <silent> [Space]er :call LanguageClient#explainErrorAtPoint()<CR>
 
 " augroup LCHighlight
 "     autocmd!
