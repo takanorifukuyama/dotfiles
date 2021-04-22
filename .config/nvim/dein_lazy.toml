@@ -351,3 +351,6 @@ build = 'sh -c "cd app & yarn install" '
 # hook_add = '''
 # source ~/.config/nvim/plugins/gh.rc.vim
 # '''
+
+[[plugins]]
+repo = 'buoto/gotests-vim'
