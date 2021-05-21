@@ -1,12 +1,14 @@
 alias v "nvim"
 alias f "fvm flutter"
 alias fc "nvim ~/.config/fish/config.fish"
+alias fca "nvim ~/.config/fish/conf.d/alias.fish"
 alias nc "nvim ~/.config/nvim"
 
 # git
 alias g "git"
 alias feature "git flow feature"
 alias ga "git add"
+alias gaa "git add -A"
 alias gps "git push"
 alias gpl "git pull"
 alias gst "git status"
@@ -22,7 +24,6 @@ alias ctl "kubectl"
 alias ctx "kubectx"
 alias ns "kubens"
 alias val "kubeval"
-alias code "code-insiders"
 alias d "docker-compose"
 
 alias bz "blitz"

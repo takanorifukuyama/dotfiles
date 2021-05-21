@@ -45,6 +45,8 @@ set -x PATH $GOBIN $PATH
 set -x PATH /opt/homebrew/bin $PATH
 set -x PATH ~/nvim-osx64/bin $PATH
 
+set -x JAVA_HOME /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+
 
 # Wasmer
 export WASMER_DIR="/Users/takanorifukuyama/.wasmer"
