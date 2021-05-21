@@ -1,9 +1,9 @@
 {
 	"optOut": false,
-	"lastUpdateCheck": 1610464399528,
+	"lastUpdateCheck": 1613471901748,
 	"update": {
-		"latest": "2.17.0",
-		"current": "2.16.2",
+		"latest": "2.19.1",
+		"current": "2.17.0",
 		"type": "minor",
 		"name": "gatsby-cli"
 	}
