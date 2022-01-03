@@ -1,53 +1,111 @@
 [[plugins]]
-repo = 'Shougo/denite.nvim'
-on_cmd = 'Denite'
-hook_source = 'source ~/.config/nvim/plugins/denite-source.vim'
-hook_add = 'source ~/.config/nvim/plugins/denite-add.vim'
-
-[plugins.ftplugin]
-denite = '''
-" Define mappings
-nnoremap <silent><buffer><expr> <CR>
-\ denite#do_map('do_action')
-nnoremap <silent><buffer><expr> a
-\ denite#do_map('choose_action')
-nnoremap <silent><buffer><expr> d
-\ denite#do_map('do_action', 'delete')
-nTSUpdatenoremap <silent><buffer><expr> p
-\ denite#do_map('do_action', 'preview')
-nnoremap <silent><buffer><expr> q
-\ denite#do_map('quit')
-nnoremap <silent><buffer><expr> '
-\ denite#do_map('quick_move')
-nnoremap <silent><buffer><expr> i
-\ denite#do_map('open_filter_buffer')
-nnoremap <silent><buffer><expr> <Space>
-\ denite#do_map('toggle_select').'j'
+repo = 'Shougo/ddc.vim'
+on_event = 'InsertEnter'
+depends = ['denops.vim']
+hook_source = '''
+source ~/.config/nvim/plugins/ddc.rc.vim
+call ddc#enable()
 '''
 
 [[plugins]]
-repo = 'ncm2/float-preview.nvim'
-on_source = 'deoplete.nvim'
-if = 'has("nvim")'
+repo = 'Shougo/ddc-around'
+on_source = 'ddc.vim'
+
+[[plugins]]
+ repo = 'Shougo/ddc-matcher_head'
+ on_source = 'ddc.vim'
+
+[[plugins]]
+ repo = 'Shougo/ddc-sorter_rank'
+ on_source = 'ddc.vim'
+
+[[plugins]]
+ repo = 'Shougo/ddc-converter_remove_overlap'
+ on_source = 'ddc.vim'
+
+[[plugins]]
+ repo = 'Shougo/ddc-nvim-lsp'
+ on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+on_event = 'InsertEnter'
+depends = ['vim-vsnip-integ', 'friendly-snippets']
 hook_add = '''
-let g:float_preview#docked = 0
-let g:float_preview#max_width = 60
-let g:float_preview#max_height = 20
-
-function! DisableExtras()
-  call nvim_win_set_option(g:float_preview#win, 'number', v:false)
-  call nvim_win_set_option(g:float_preview#win, 'relativenumber', v:false)
-  call nvim_win_set_option(g:float_preview#win, 'cursorline', v:false)
-endfunction
-
-autocmd User FloatPreviewWinOpen call DisableExtras()
+imap <expr> <C-j> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<C-j>'
+smap <expr> <C-j> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<C-j>'
+imap <expr> <C-f> vsnip#jumpable(1)  ? '<Plug>(vsnip-jump-next)' : '<C-f>'
+smap <expr> <C-f> vsnip#jumpable(1)  ? '<Plug>(vsnip-jump-next)' : '<C-f>'
+imap <expr> <C-b> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<C-b>'
+smap <expr> <C-b> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<C-b>'
+let g:vsnip_filetypes = {}
 '''
 
 [[plugins]]
-repo = 'Shougo/neoyank.vim'
-on_event = 'TextYankPost'
-on_source = ['denite.nvim']
+ repo = 'hrsh7th/vim-vsnip-integ'
 
+[[plugins]]
+ repo = 'rafamadriz/friendly-snippets'
+
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+on_event = 'BufEnter'
+hook_source = '''
+lua require("plugins.nvim-lspconfig")
+'''
+
+[[plugins]]
+ repo ='williamboman/nvim-lsp-installer'
+ on_source = 'nvim-lspconfig'
+
+[[plugins]]
+ repo = 'matsui54/ddc-nvim-lsp-doc'
+ on_source = 'ddc.vim'
+ hook_source = '''
+ let g:ddc_nvim_lsp_doc_config = {
+     \ 'documentation': {
+     \   'enable': v:true,
+     \   'border': 'single',
+     \   'maxWidth': 100,
+     \   'maxHeight': 60,
+     \   'winblend': 15,
+     \ },
+     \ 'signature': {
+     \   'border': 'single',
+     \   'maxHeight': 10,
+     \   'winblend': 15,
+     \ },
+     \ }
+ call ddc_nvim_lsp_doc#enable()
+'''
+
+[[plugins]]
+repo = 'matsui54/denops-popup-preview.vim'
+hook_source = '''
+call popup_preview#enable()
+'''
+
+# FIXME: 読み込めてない
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+hook_source = '''
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    disable = {
+      'lua',
+      'ruby',
+      'toml',
+      'c_sharp',
+      'vue',
+    }
+  }
+}
+EOF
+'''
+
+#############################################################################
 
 [[plugins]]
 repo = 'Shougo/defx.nvim'
@@ -211,8 +269,6 @@ hook_add = '''
 source ~/.config/nvim/plugins/easymotion.vim
 '''
 
-[[plugins]]
-repo = 'chemzqm/denite-git'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
@@ -320,12 +376,6 @@ hook_add = '''
 let g:go_fmt_command = "goimports"
 let g:go_metalinter_autosave = 1
 let g:go_template_autocreate = 0
-'''
-
-[[plugins]]
-repo = 'posva/vim-vue'
-hook_add = '''
-source ~/.config/nvim/plugins/vim-vue.rc.vim
 '''
 
 [[plugins]]

@@ -1,7 +1,7 @@
 " Customize global settings
 " Use around source.
 " https://github.com/Shougo/ddc-around
-call ddc#custom#patch_global('sources', ['around'])
+call ddc#custom#patch_global('sources', ['nvim-lsp', 'around', 'vsnip'])
 
 " Use matcher_head and sorter_rank.
 " https://github.com/Shougo/ddc-matcher_head
@@ -16,6 +16,20 @@ call ddc#custom#patch_global('sourceOptions', {
       \ 'forceCompletionPattern': '\.\w*|:\w*|->\w*',
       \ },
       \ })
+ call ddc#custom#patch_global('sourceOptions', {
+      \ '_': {
+      \ 'matchers': ['matcher_head'],
+      \ 'sorters': ['sorter_rank'],
+      \ 'converters': ['converter_remove_overlap'],
+      \ },
+      \ 'around': {'mark': 'Around'},
+      \ 'nvim-lsp': {
+      \     'mark': 'L',
+      \     'forceCompletionPattern': '\.\w*|:\w*|->\w*',
+      \ },
+      \ })
+
+
 
 call ddc#custom#patch_global('sourceParams', {
       \ 'around': {'maxSize': 500},
