@@ -43,7 +43,7 @@ set -x PATH $GOBIN $PATH
 
 # apple silicon setting
 set -x PATH /opt/homebrew/bin $PATH
-set -x PATH ~/nvim-osx64/bin $PATH
+# set -x PATH ~/nvim-osx64/bin $PATH
 
 set -x JAVA_HOME /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
 
