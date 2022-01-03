@@ -44,3 +44,11 @@ repo = 'yggdroot/indentline'
 hook_add = '''
 let g:indentline_char = '¦'
 '''
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+hook_source = '''
+lua require("plugins/treesitter")
+'''
+
+

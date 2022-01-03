@@ -22,7 +22,7 @@ call ddc#custom#patch_global('sourceOptions', {
       \ 'sorters': ['sorter_rank'],
       \ 'converters': ['converter_remove_overlap'],
       \ },
-      \ 'around': {'mark': 'Around'},
+      \ 'around': {'mark': 'A'},
       \ 'nvim-lsp': {
       \     'mark': 'L',
       \     'forceCompletionPattern': '\.\w*|:\w*|->\w*',
