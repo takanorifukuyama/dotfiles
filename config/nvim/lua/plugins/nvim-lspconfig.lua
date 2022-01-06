@@ -1,7 +1,14 @@
 local nvim_lsp = require('lspconfig')
+local lsp_installer = require("nvim-lsp-installer")
+
 local on_attach = function (client, bufnr)
 local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+local node_root_dir = nvim_lsp.util.root_pattern("package.json", "node_modules")
+local buf_name = vim.api.nvim_buf_get_name(0)
+local current_buf = vim.api.nvim_get_current_buf()
+local is_node_repo = node_root_dir(buf_name, current_buf) ~= nil
 
 local opts = { noremap=true, silent=true }
  buf_set_keymap('n', '<space>d', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -15,9 +22,18 @@ local opts = { noremap=true, silent=true }
  buf_set_keymap('n', 'g]', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
 end
 
- local lsp_installer = require("nvim-lsp-installer")
  lsp_installer.on_server_ready(function(server)
    local opts = {}
+
+   -- nodes, denoの設定を出し分ける
+   if server.name == "tsserver" or server.name == "eslint" then
+     opts.autostart = is_node_repo
+   elseif server.name == "denols" then
+     opts.autostart = not(is_node_repo)
+     -- 以下は出し分けとは関係ないが設定しておくのがオススメ
+     opts.init_options = { lint = true, unstable = true, }
+   end
+
    opts.on_attach = on_attach
    server:setup(opts)
    vim.cmd [[ do User LspAttachBuffers ]]
