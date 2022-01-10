@@ -18,7 +18,8 @@ set -x PATH $DART_SDK $PATH
 set -x PATH ~/.SDK/google-cloud-sdk/bin $PATH
 
 # nodejs
-set -x PATH ~/.nodebrew/current/bin $PATH
+set -x VOLTA_HOME $HOME/.volta
+set -x PATH $VOLTA_HOME/bin $PATH
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish ; or true
 
