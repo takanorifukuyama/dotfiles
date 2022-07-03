@@ -415,4 +415,10 @@ let g:go_metalinter_autosave = 1
 let g:go_template_autocreate = 0
 '''
 
+[[plugins]]
+repo = 'buoto/gotests-vim'
+hook_add = '''
+nnoremap <silent> [Space]gt :GoTestFunc<CR>
+'''
+
 

@@ -46,12 +46,6 @@ let g:indentline_char = '¦'
 '''
 
 [[plugins]]
-repo = 'buoto/gotests-vim'
-hook_add = '''
-nnoremap <silent> [Space]gt :GoTestFunc<CR>
-'''
-
-[[plugins]]
 repo = 'nvim-lua/plenary.nvim'
 
 [[plugins]]
