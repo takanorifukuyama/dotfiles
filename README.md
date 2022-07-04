@@ -4,22 +4,15 @@
 git clone --recursive git@github.com:takanorifukuyama/dotfiles.git
 ```
 
-homebrewのインストール
+homebrew のインストール
 https://brew.sh/index_ja
 
 ### run
 
 ```
+brew bundle install
 mkdir ../.SDK
 source dotfiles.sh
-```
-
-following package required
-
-https://github.com/dandavison/delta
-
-```fish
-brew install git-delta
 ```
 
 ## fish
