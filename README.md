@@ -36,10 +36,6 @@ cargo install starship
 ### initialize fish
 
 ```fish
-brew install fish peco ghq fzf
-```
-
-```fish
 # /opt/homebrew/bin/fish を最後の行に追加
 sudo vi /etc/shells
 ```
