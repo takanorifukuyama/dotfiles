@@ -2,5 +2,6 @@
 .config/yarn/global/node_modules
 .config/gh/hosts.yml
 .config/gcloud/
+.config/gh/
 .SDK/google-cloud-sdk/
 **/*.log
