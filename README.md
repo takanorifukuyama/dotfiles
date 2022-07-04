@@ -4,6 +4,9 @@
 git clone --recursive git@github.com:takanorifukuyama/dotfiles.git
 ```
 
+homebrewのインストール
+https://brew.sh/index_ja
+
 ### run
 
 ```
