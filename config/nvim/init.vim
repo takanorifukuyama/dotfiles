@@ -40,19 +40,7 @@ endif
 
 call s:source_rc('dein.rc.vim')
 
-call dein#add('nvim-treesitter/nvim-treesitter', { 'merged': 0 })
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    disable = {
-      'ruby',
-      'c_sharp',
-      'vue',
-    }
-  }
-}
-EOF
+" call dein#add('nvim-treesitter/nvim-treesitter', { 'merged': 0 })
 
 if has('vim_starting') && !empty(argv())
   call vimrc#on_filetype()
