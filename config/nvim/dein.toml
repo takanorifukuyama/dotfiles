@@ -1,15 +1,6 @@
 # dein.toml の使い方がわかりやすい
 # https://leico.github.io/TechnicalNote/VimR/VimR-dein-toml
 [[plugins]]
-repo = 'nvim-treesitter/nvim-treesitter'
-merged = 0
-hook_post_update = 'TSUpdate'
-on_event = 'BufRead'
-hook_source = '''
-lua require("plugins/treesitter")
-'''
-
-[[plugins]]
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
@@ -67,6 +58,16 @@ source ~/.config/nvim/plugins/gitgutter.vim
 '''
 
 
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+merged = 0
+hook_post_update = 'TSUpdate'
+on_event = 'BufRead'
+hook_source = '''
+lua require("plugins.treesitter")
+'''
+
+
 
 # ddu
 [[plugins]]
@@ -74,7 +75,6 @@ repo = 'Shougo/ddu.vim'
 hook_add = '''
 source ~/.config/nvim/plugins/ddu.rc.vim
 '''
-
 
 [[plugins]]
 repo='Shougo/ddu-ui-ff'
@@ -92,3 +92,5 @@ repo='Shougo/ddu-commands.vim'
 repo='4513ECHO/ddu-source-colorscheme'
 [[plugins]]
 repo='shun/ddu-source-buffer'
+
+

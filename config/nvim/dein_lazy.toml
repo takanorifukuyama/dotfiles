@@ -1,3 +1,18 @@
+# lsp
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+on_event = 'BufEnter'
+hook_source = '''
+lua require("plugins.nvim-lspconfig")
+'''
+
+[[plugins]]
+ repo = 'williamboman/mason.nvim'
+
+[[plugins]]
+ repo = 'williamboman/mason-lspconfig.nvim'
+
+
 [[plugins]]
 repo = 'Shougo/ddc.vim'
 on_event = 'InsertEnter'
@@ -49,42 +64,6 @@ source ~/.config/nvim/plugins/ddc.rc.vim
 
 [[plugins]]
  repo = 'rafamadriz/friendly-snippets'
-
-[[plugins]]
- repo = 'vim-denops/denops.vim'
-
-
-[[plugins]]
-repo = 'neovim/nvim-lspconfig'
-on_event = 'BufEnter'
-hook_source = '''
-lua require("plugins.nvim-lspconfig")
-'''
-
-[[plugins]]
- repo ='williamboman/nvim-lsp-installer'
- on_source = 'nvim-lspconfig'
-
-# [[plugins]]
-#  repo = 'matsui54/ddc-nvim-lsp-doc'
-#  on_source = 'ddc.vim'
-#  hook_source = '''
-#  let g:ddc_nvim_lsp_doc_config = {
-#      \ 'documentation': {
-#      \   'enable': v:true,
-#      \   'border': 'single',
-#      \   'maxWidth': 100,
-#      \   'maxHeight': 60,
-#      \   'winblend': 15,
-#      \ },
-#      \ 'signature': {
-#      \   'border': 'single',
-#      \   'maxHeight': 10,
-#      \   'winblend': 15,
-#      \ },
-#      \ }
-#  call ddc_nvim_lsp_doc#enable()
-# '''
 
 [[plugins]]
 repo = 'matsui54/denops-popup-preview.vim'

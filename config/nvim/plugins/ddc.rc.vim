@@ -9,16 +9,6 @@ call ddc#custom#patch_global('sources', ['nvim-lsp', 'around', 'vsnip'])
 " https://github.com/Shougo/ddc-sorter_rank
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
-      \   'matchers': ['matcher_head'],
-      \   'sorters': ['sorter_rank']},
-      \ 'around': {'mark': 'Around'},
-      \ 'nvim-lsp': {
-      \ 'mark': 'L',
-      \ 'forceCompletionPattern': '\.\w*|:\w*|->\w*',
-      \ },
-      \ })
- call ddc#custom#patch_global('sourceOptions', {
-      \ '_': {
       \ 'matchers': ['matcher_head'],
       \ 'sorters': ['sorter_rank'],
       \ 'converters': ['converter_remove_overlap'],
@@ -55,7 +45,4 @@ inoremap <silent><expr> <TAB>
 
 " <S-TAB>: completion back.
 inoremap <expr><S-TAB>  ddc#map#pum_visible() ? '<C-p>' : '<C-h>'
-
-" Use ddc.
-call ddc#enable()
 

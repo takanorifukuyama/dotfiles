@@ -1,5 +1,8 @@
+print("mason")
+require("mason").setup()
+require("mason-lspconfig").setup()
 local nvim_lsp = require('lspconfig')
-local lsp_installer = require("nvim-lsp-installer")
+
 
 local on_attach = function (client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -39,19 +42,3 @@ nvim_lsp.sqls.setup{
   },
 }
 
-lsp_installer.on_server_ready(function(server)
-  local opts = {}
-
-  -- nodes, denoの設定を出し分ける
-  if server.name == "tsserver" or server.name == "eslint" then
-    opts.autostart = is_node_repo
-  elseif server.name == "denols" then
-    opts.autostart = not(is_node_repo)
-    -- 以下は出し分けとは関係ないが設定しておくのがオススメ
-    opts.init_options = { lint = true, unstable = true, }
-  end
-
-  opts.on_attach = on_attach
-  server:setup(opts)
-  vim.cmd [[ do User LspAttachBuffers ]]
-end)
