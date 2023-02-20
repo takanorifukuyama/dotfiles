@@ -1,35 +1,13 @@
+# dein.toml の使い方がわかりやすい
+# https://leico.github.io/TechnicalNote/VimR/VimR-dein-toml
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-depends = 'context_filetype.vim'
-on_event = 'InsertEnter'
-hook_add = '''
-source ~/.config/nvim/plugins/deoplete.vim
-call deoplete#enable()
-'''
-
-[[plugins]]
-repo = 'shougo/deoplete-tabnine' 
-on_event = 'InsertEnter'
-build = './install.sh'
-
-[[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-rev = 'next'
-build = 'cargo build'
-hook_source = '''
-source ~/.config/nvim/plugins/LanguageClient-neovim.rc.vim
-''' 
+repo = 'vim-denops/denops.vim'
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
-
-[[plugins]]
-repo = 'Shougo/neoyank.vim'
-on_event = 'TextYankPost'
-on_source = ['denite.nvim']
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
@@ -68,3 +46,51 @@ repo = 'yggdroot/indentline'
 hook_add = '''
 let g:indentline_char = '¦'
 '''
+
+[[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+on_event = 'InsertLeave'
+hook_source = '''
+source ~/.config/nvim/plugins/gitgutter.vim
+'''
+
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+merged = 0
+hook_post_update = 'TSUpdate'
+on_event = 'BufRead'
+hook_source = '''
+lua require("plugins.treesitter")
+'''
+
+
+
+# ddu
+[[plugins]]
+repo = 'Shougo/ddu.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/ddu.rc.vim
+'''
+
+[[plugins]]
+repo='Shougo/ddu-ui-ff'
+[[plugins]]
+repo='Shougo/ddu-source-file_rec'
+[[plugins]]
+repo='Shougo/ddu-source-file'
+[[plugins]]
+repo='Shougo/ddu-filter-matcher_substring'
+[[plugins]]
+repo='Shougo/ddu-kind-file'
+[[plugins]]
+repo='Shougo/ddu-commands.vim'
+[[plugins]]
+repo='4513ECHO/ddu-source-colorscheme'
+[[plugins]]
+repo='shun/ddu-source-buffer'
+
+

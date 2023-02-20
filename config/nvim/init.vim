@@ -40,6 +40,8 @@ endif
 
 call s:source_rc('dein.rc.vim')
 
+" call dein#add('nvim-treesitter/nvim-treesitter', { 'merged': 0 })
+
 if has('vim_starting') && !empty(argv())
   call vimrc#on_filetype()
 endif
