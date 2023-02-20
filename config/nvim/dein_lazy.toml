@@ -228,6 +228,7 @@ hook_add = '''
 let g:rustfmt_autosave = 1
 '''
 
+######################### ここからしたは一旦移さない
 [[plugins]]
 repo = 'dart-lang/dart-vim-plugin'
 
