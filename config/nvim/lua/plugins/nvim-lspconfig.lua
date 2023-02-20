@@ -2,18 +2,6 @@ require("mason").setup()
 require("mason-lspconfig").setup()
 local nvim_lsp = require('lspconfig')
 
-require('mason-lspconfig').setup_handlers({ function(server)
-  local opt = {
-    -- -- Function executed when the LSP server startup
-    -- on_attach = function(client, bufnr)
-    --   local opts = { noremap=true, silent=true }
-    --   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    --   vim.cmd 'autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)'
-    -- end,
-  }
-  require('lspconfig')[server].setup(opt)
-end })
-
 local on_attach = function (client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -35,17 +23,49 @@ local on_attach = function (client, bufnr)
   buf_set_keymap('n', 'g]', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
 end
 
+
+require('mason-lspconfig').setup_handlers({ function(server)
+  local opt = {
+    -- -- Function executed when the LSP server startup
+    on_attach = on_attach
+    --   local opts = { noremap=true, silent=true }
+    --   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+    --   vim.cmd 'autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)'
+    -- end,
+  }
+  require('lspconfig')[server].setup(opt)
+end })
+
 nvim_lsp.rust_analyzer.setup{
+  settings = {
+    ["rust-analyzer"] = {
+        -- enable clippy on save
+        checkOnSave = {
+            command = "clippy"
+        },
+    }
+  },
   on_attach = on_attach,
 }
 
+nvim_lsp.pyright.setup{
+  settings = {
+    python = {
+      venvPath = ".",
+      pythonPath = "./.venv/bin/python",
+      analysis = {
+        extraPaths = {"."}
+      }
+    }
+  }
+}
 nvim_lsp.sqls.setup{
   settings = {
     sqls = {
       connections = {
         {
           driver = 'postgresql',
-          dataSourceName = 'host=localhost port=5432 user=app-user password=randompasswordldbname=tachyon sslmode=disable',
+          dataSourceName = 'host=localhost port=5432 user=app-user password=randompassword dbname=tachyon sslmode=disable',
         },
       },
     },
