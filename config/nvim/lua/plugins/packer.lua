@@ -19,6 +19,7 @@ require("packer").startup(function()
   use 'yggdroot/indentline'
   use 'nvim-lua/plenary.nvim'
   use 'airblade/vim-gitgutter'
+
   use 'Shougo/ddu.vim'
   use 'Shougo/ddu-ui-ff'
   use 'Shougo/ddu-source-file_rec'
@@ -46,7 +47,7 @@ require("packer").startup(function()
   use 'Shougo/deol.nvim'
   use 'Shougo/neosnippet'
   use 'thinca/vim-quickrun'
-  use 'prettier/vim-prettier'
+  use { 'prettier/vim-prettier', on_ft={'javascript', 'typescript', 'vue', 'css', 'scss', 'json', 'markdown'} }
   use 'rhysd/accelerated-jk'
   use 'sjl/gundo.vim'
   use 'tpope/vim-endwise'
@@ -55,6 +56,10 @@ require("packer").startup(function()
   use 'tpope/vim-fugitive'
   use 'rhysd/vim-gfm-syntax'
   use 'rust-lang/rust.vim'
+  use 'github/copilot.vim'
+
+  use 'peitalin/vim-jsx-typescript'
+  use 'leafgarland/typescript-vim'
 
 end)
 
@@ -65,3 +70,23 @@ vim.cmd [[
   autocmd ColorScheme * highlight LineNr ctermfg=14 guifg=#8FA0B3
   colorscheme ayu
 ]]
+
+vim.cmd[[
+  let g:rustfmt_autosave = 1
+
+let g:popup_preview_config = {
+    \ 'delay': 30,
+    \ 'maxWidth': 100,
+    \ 'winblend': 0,
+    \ }
+call popup_preview#enable()
+let g:markdown_fenced_languages = ['ts=typescript']
+
+let g:signature_help_config = {
+  \ 'style': 'virtual',
+  \ 'border': v:false,
+  \ }
+call signature_help#enable()
+let g:markdown_fenced_languages = ['ts=typescript']
+]]
+
