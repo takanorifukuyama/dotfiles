@@ -6,7 +6,7 @@ SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/Users/takanorifukuyama/\x2elocal/share/z/data
 SETUVAR Z_DATA_DIR:/Users/takanorifukuyama/\x2elocal/share/z
 SETUVAR Z_EXCLUDE:\x5e/Users/takanorifukuyama\x24
-SETUVAR __fish_initialized:3100
+SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_cl:clear
 SETUVAR _fish_abbr_ef:exec\x20fish\x20\x2dl
 SETUVAR _fish_abbr_fc:nvim\x20/Users/takanorifukuyama/\x2econfig/fish/config\x2efish
@@ -55,6 +55,7 @@ SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR --export fish_user_paths:/Users/takanorifukuyama/\x2epyenv/bin\x1e/Users/takanorifukuyama/\x2eserverless/bin
+SETUVAR fish_pager_color_selected_background:\x2dr
+SETUVAR --export fish_user_paths:/Users/takanorifukuyama/\x2erustup/toolchains/nightly\x2daarch64\x2dapple\x2ddarwin/bin\x1e/Users/takanorifukuyama/\x2epyenv/bin\x1e/Users/takanorifukuyama/\x2eserverless/bin
 SETUVAR nvm_data:/Users/takanorifukuyama/\x2elocal/share/nvm
 SETUVAR nvm_mirror:https\x3a//nodejs\x2eorg/dist
