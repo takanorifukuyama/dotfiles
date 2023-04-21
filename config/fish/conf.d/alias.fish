@@ -3,6 +3,7 @@ alias f "fvm flutter"
 alias fc "nvim ~/.config/fish/config.fish"
 alias fca "nvim ~/.config/fish/conf.d/alias.fish"
 alias nc "nvim ~/.config/nvim"
+alias wez "nvim ~/.config/wezterm/wezterm.lua"
 
 # git
 alias g "git"
@@ -27,3 +28,5 @@ alias val "kubeval"
 alias d "docker-compose"
 
 alias bz "blitz"
+alias k "kubectl"
+

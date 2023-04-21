@@ -5,3 +5,4 @@ decors/fish-ghq
 oh-my-fish/plugin-peco
 jorgebucaran/fish-bax
 jorgebucaran/fish-nvm
+lilyball/nix-env.fish
