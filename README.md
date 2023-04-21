@@ -82,3 +82,8 @@ fig update
 ```
 
 ってやるといいらしい
+
+## Flutter
+
+openjdkはこちらからインストールできます
+https://adoptium.net/temurin/releases/?version=8
