@@ -61,6 +61,13 @@ require("packer").startup(function()
   use 'peitalin/vim-jsx-typescript'
   use 'leafgarland/typescript-vim'
 
+  use {
+    'akinsho/flutter-tools.nvim',
+    requires = {
+        'nvim-lua/plenary.nvim',
+        'stevearc/dressing.nvim', -- optional for vim.ui.select
+    },
+  }
 end)
 
 vim.cmd [[

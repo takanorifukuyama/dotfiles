@@ -5,3 +5,5 @@
 .config/gh/
 .SDK/google-cloud-sdk/
 **/*.log
+
+.DS_Store
