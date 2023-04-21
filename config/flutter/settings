@@ -1,3 +1,4 @@
 {
-  "enable-web": true
+  "enable-web": true,
+  "enable-macos-desktop": true
 }
