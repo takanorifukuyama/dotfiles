@@ -1,4 +1,5 @@
-vim.cmd.packadd "packer.nvim"
+vim.cmd[[packadd packer.nvim]]
+
 
 require("packer").startup(function()
   -- 起動時に読み込むプラグインを書いてください。
@@ -38,16 +39,18 @@ require("packer").startup(function()
   use 'Shougo/ddc-sorter_rank'
   use 'Shougo/ddc-converter_remove_overlap'
   use 'Shougo/ddc-nvim-lsp'
+
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/vim-vsnip-integ'
   use 'rafamadriz/friendly-snippets'
+
   use 'matsui54/denops-popup-preview.vim'
   use 'matsui54/denops-signature_help'
   use 'ray-x/lsp_signature.nvim'
+
   use 'Shougo/deol.nvim'
   use 'Shougo/neosnippet'
   use 'thinca/vim-quickrun'
-  use { 'prettier/vim-prettier', on_ft={'javascript', 'typescript', 'vue', 'css', 'scss', 'json', 'markdown'} }
   use 'rhysd/accelerated-jk'
   use 'sjl/gundo.vim'
   use 'tpope/vim-endwise'
@@ -60,6 +63,8 @@ require("packer").startup(function()
 
   use 'peitalin/vim-jsx-typescript'
   use 'leafgarland/typescript-vim'
+  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'MunifTanjim/prettier.nvim'
 
   use {
     'akinsho/flutter-tools.nvim',
@@ -67,6 +72,15 @@ require("packer").startup(function()
         'nvim-lua/plenary.nvim',
         'stevearc/dressing.nvim', -- optional for vim.ui.select
     },
+  }
+
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  use {
+    "nvim-telescope/telescope-file-browser.nvim",
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   }
 end)
 
@@ -90,10 +104,12 @@ call popup_preview#enable()
 let g:markdown_fenced_languages = ['ts=typescript']
 
 let g:signature_help_config = {
-  \ 'style': 'virtual',
-  \ 'border': v:false,
+  \ 'contentsStyle': 'full',
+  \ 'viewStyle': 'floating',
   \ }
 call signature_help#enable()
 let g:markdown_fenced_languages = ['ts=typescript']
+let g:prettier#autoformat = 1
 ]]
+
 

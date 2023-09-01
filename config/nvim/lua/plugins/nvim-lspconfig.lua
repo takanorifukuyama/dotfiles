@@ -19,7 +19,7 @@ local on_attach = function (client, bufnr)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+  buf_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
   buf_set_keymap('n', 'g[', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
   buf_set_keymap('n', 'g]', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
 end
@@ -40,18 +40,3 @@ end })
 nvim_lsp.rust_analyzer.setup{
   on_attach = on_attach,
 }
-
-nvim_lsp.sqls.setup{
-  settings = {
-    sqls = {
-      connections = {
-        {
-          driver = 'postgresql',
-          dataSourceName = 'host=localhost port=5432 user=app-user password=randompasswordldbname=tachyon sslmode=disable',
-        },
-      },
-    },
-  },
-}
-
-

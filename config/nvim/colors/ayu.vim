@@ -173,7 +173,6 @@ exe "hi! Special"         .s:fg_special   .s:bg_none        .s:fmt_none
 "   Delimiter"
 "   SpecialComment"
 "   Debug"
-"
 exe "hi! Underlined"      .s:fg_tag       .s:bg_none        .s:fmt_undr
 
 exe "hi! Ignore"          .s:fg_none      .s:bg_none        .s:fmt_none

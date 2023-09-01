@@ -53,8 +53,16 @@ function! s:ddu_filter_my_settings() abort
   \ <Cmd>close<CR>
 endfunction
 
-nnoremap <silent> [Window]f :<C-u>Ddu file<cr>
-nnoremap <silent> [Window]b :<C-u>Ddu buffer<cr>
-nnoremap <silent> [Window]s :<C-u>Ddu file_rec<cr>
-nnoremap <silent> xdc :Ddu colorscheme<cr>
 ]]
+
+
+local keymap = vim.api.nvim_set_keymap
+-- nnoremap <silent> [Window]f :<C-u>Ddu file<cr>
+-- keymap('n', '[Window]f', ':Ddu file<cr>', {noremap = true, silent = true})
+-- nnoremap <silent> [Window]b :<C-u>Ddu buffer<cr>
+-- keymap('n', '[Window]b', ':Ddu buffer<cr>', {noremap = true, silent = true})
+-- nnoremap <silent> [Window]s :<C-u>Ddu file_rec<cr>
+-- keymap('n', '[Window]s', ':Ddu file_rec<cr>', {noremap = true, silent = true})
+-- nnoremap <silent> xdc :Ddu colorscheme<cr>
+-- keymap('n', 'xdc', ':Ddu colorscheme<cr>', {noremap = true, silent = true})
+
