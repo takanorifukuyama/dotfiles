@@ -19,7 +19,7 @@ local options = {
   list = true, -- 表示できない文字を表示
   wrap = true, -- 折り返し
   listchars = 'tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲', -- 表示できない文字を表示
-  conceallevel = 0, -- コメントを隠す
+  -- conceallevel = 0, -- コメントを隠す
   -- nohlsearch = true, 
   signcolumn = 'yes', -- シグンカラムを表示
   -- disable modeline

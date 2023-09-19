@@ -29,7 +29,7 @@ vim.cmd[[
   " Customize global settings
   " Use around source.
   " https://github.com/Shougo/ddc-around
-  call ddc#custom#patch_global('sources', ['nvim-lsp', 'around', 'vsnip'])
+  call ddc#custom#patch_global('sources', ['nvim-lsp', 'around'])
   
   " Use matcher_head and sorter_rank.
   " https://github.com/Shougo/ddc-matcher_head
@@ -46,12 +46,19 @@ vim.cmd[[
         \     'forceCompletionPattern': '\.\w*|:\w*|->\w*',
         \ },
         \ })
-  
-  
-  
-  call ddc#custom#patch_global('sourceParams', {
-        \ 'around': {'maxSize': 500},
-        \ })
+
+  call ddc#custom#patch_global(#{
+      \ sourceParams: #{
+      \   nvim-lsp: #{
+      \     snippetEngine: denops#callback#register({
+      \           body -> vsnip#anonymous(body) }),
+      \     enableResolveItem: v:true,
+      \     enableAdditionalTextEdit: v:true,
+      \     confirmBehavior: 'replace',
+      \   },
+      \ around: {'maxSize': 500},
+      \ },
+      \})
   
   " Customize settings on a filetype
   call ddc#custom#patch_filetype(['c', 'cpp'], 'sources', ['around', 'clangd'])

@@ -40,8 +40,8 @@ require("packer").startup(function()
   use 'Shougo/ddc-converter_remove_overlap'
   use 'Shougo/ddc-nvim-lsp'
 
-  use 'hrsh7th/vim-vsnip'
-  use 'hrsh7th/vim-vsnip-integ'
+  -- use 'hrsh7th/vim-vsnip'
+  -- use 'hrsh7th/vim-vsnip-integ'
   use 'rafamadriz/friendly-snippets'
 
   use 'matsui54/denops-popup-preview.vim'
@@ -63,7 +63,7 @@ require("packer").startup(function()
 
   use 'peitalin/vim-jsx-typescript'
   use 'leafgarland/typescript-vim'
-  use 'jose-elias-alvarez/null-ls.nvim'
+  -- use 'jose-elias-alvarez/null-ls.nvim'
   use 'MunifTanjim/prettier.nvim'
 
   use {
@@ -110,6 +110,8 @@ let g:signature_help_config = {
 call signature_help#enable()
 let g:markdown_fenced_languages = ['ts=typescript']
 let g:prettier#autoformat = 1
+
+let g:vim_markdown_conceal = 0
 ]]
 
 
