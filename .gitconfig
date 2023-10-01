@@ -1,7 +1,8 @@
 [user]
 	email = takanori.fukuyama@gmail.com
 	name = Takanori Fukuyama
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFu4z8i7ZQ6r7r+HHhMJ4RNMyS83twXMmr73E+iBD1jx
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICxBBj6E9E8NsJP3fM1U9wS4xVeExIR2Fy80yC1lZ7ho
+  # signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK5KKaKm2vGl/eZXlNO6Tt7LgOmWG+MdCl+tsaJroTMT
 [ghq]
 	root = ~/git
 [push]
@@ -39,6 +40,10 @@
     graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
 [gpg]
 	format = ssh
+# [gpg "ssh"]
+# 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+# [commit]
+# 	gpgsign = true
 [gpg "ssh"]
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
