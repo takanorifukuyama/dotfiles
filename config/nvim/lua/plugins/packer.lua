@@ -63,7 +63,7 @@ require("packer").startup(function()
 
   use 'peitalin/vim-jsx-typescript'
   use 'leafgarland/typescript-vim'
-  -- use 'jose-elias-alvarez/null-ls.nvim'
+  use 'jose-elias-alvarez/null-ls.nvim'
   use 'MunifTanjim/prettier.nvim'
 
   use {
