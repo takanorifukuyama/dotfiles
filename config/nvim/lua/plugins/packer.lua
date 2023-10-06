@@ -48,6 +48,11 @@ require("packer").startup(function()
   use 'matsui54/denops-signature_help'
   use 'ray-x/lsp_signature.nvim'
 
+  -- react
+  use 'windwp/nvim-ts-autotag'
+  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'MunifTanjim/prettier.nvim'
+
   use 'Shougo/deol.nvim'
   use 'Shougo/neosnippet'
   use 'thinca/vim-quickrun'
@@ -63,8 +68,6 @@ require("packer").startup(function()
 
   use 'peitalin/vim-jsx-typescript'
   use 'leafgarland/typescript-vim'
-  use 'jose-elias-alvarez/null-ls.nvim'
-  use 'MunifTanjim/prettier.nvim'
 
   use {
     'akinsho/flutter-tools.nvim',
@@ -109,7 +112,6 @@ let g:signature_help_config = {
   \ }
 call signature_help#enable()
 let g:markdown_fenced_languages = ['ts=typescript']
-let g:prettier#autoformat = 1
 
 let g:vim_markdown_conceal = 0
 ]]
