@@ -50,5 +50,5 @@ set -x JAVA_HOME /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/H
 
 
 # Wasmer
-export WASMER_DIR="/Users/takanorifukuyama/.wasmer"
+export WASMER_DIR="$HOME/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"

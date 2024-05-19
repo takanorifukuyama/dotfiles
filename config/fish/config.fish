@@ -51,18 +51,18 @@ set -x JAVA_HOME /Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home
 
 
 # Wasmer
-export WASMER_DIR="/Users/takanorifukuyama/.wasmer"
+export WASMER_DIR="$HOME/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/takanorifukuyama/.SDK/google-cloud-sdk/path.fish.inc' ]; . '/Users/takanorifukuyama/.SDK/google-cloud-sdk/path.fish.inc'; end
+if [ -f '$HOME/.SDK/google-cloud-sdk/path.fish.inc' ]; . '$HOME/.SDK/google-cloud-sdk/path.fish.inc'; end
 
 # solana
 set -x PATH $HOME/.local/share/solana/install/active_release/bin $PATH
 set -x PATH $HOME/.avm/bin $PATH
 
 # pnpm
-set -gx PNPM_HOME "/Users/takanorifukuyama/Library/pnpm"
+set -gx PNPM_HOME "$HOME/Library/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
 # pnpm end
 
