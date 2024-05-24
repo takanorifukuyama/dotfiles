@@ -51,7 +51,6 @@ require("packer").startup(function()
   -- react
   use 'windwp/nvim-ts-autotag'
   use 'jose-elias-alvarez/null-ls.nvim'
-  use 'MunifTanjim/prettier.nvim'
 
   use 'Shougo/deol.nvim'
   use 'Shougo/neosnippet'
