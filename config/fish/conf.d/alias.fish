@@ -30,3 +30,4 @@ alias d "docker-compose"
 alias bz "blitz"
 alias k "kubectl"
 
+alias compose "docker compose"
